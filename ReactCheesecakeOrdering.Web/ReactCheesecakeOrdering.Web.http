@@ -1,0 +1,6 @@
+@ReactCheesecakeOrdering.Web_HostAddress = http://localhost:5153
+
+GET {{ReactCheesecakeOrdering.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,77 @@
+:root {
+  /* font stack: webfont then a sensible serif fallback */
+  --font-body: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-heading: 'Playfair Display', 'Lora', Georgia, serif;
+  --cheesecake-cream: #f3e9d2;
+  --warm-brown: #5b4229;
+}
+
+/* apply to whole page container */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--cheesecake-cream);
+}
+
+.app-container {
+  /* Fill viewport but allow content to flow on small screens */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+
+  /* Base cheesecake cream color */
+  background-color: #f3e9d2;
+
+  /* Soft, warm highlights for visual depth */
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 245, 0.16) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(255, 240, 220, 0.1) 0%, transparent 25%);
+  background-blend-mode: overlay;
+
+  /* Create stacking context so the texture overlay sits behind content */
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle paper/noise texture overlay using gradients so no external asset required */
+.app-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* very fine grain + a soft vertical banding for an organic look */
+  background-image:
+    repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.02) 0 1px, transparent 1px 6px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.02));
+  opacity: 0.45;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+/* keep page content above the texture */
+.app-container > .d-flex {
+  position: relative;
+  z-index: 1;
+}
+
+/* small visual tweaks to headings and button to match creamy theme */
+.app-container h1,
+.app-container h2 {
+  color: #5b4229; /* warm brown for contrast */
+  text-align: center;
+  margin: 0.25rem 0;
+}
+
+/* move the button down a bit to add breathing room */
+.app-container .btn.btn-light {
+  margin-top: 1.25rem;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #5b4229;
+  box-shadow: 0 2px 6px rgba(11, 8, 6, 0.06);
+}

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Delectable cheesecake slice</title>
+  <desc id="desc">Stylized, appetizing cheesecake slice with a golden crust, creamy filling, raspberry topping and caramel drizzle</desc>
+
+  <!-- Soft background vignette -->
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#fff9f0"/>
+      <stop offset="60%" stop-color="#fbf0dc"/>
+      <stop offset="100%" stop-color="#f3e9d2"/>
+    </radialGradient>
+
+    <linearGradient id="fillGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#fffdf8"/>
+      <stop offset="50%" stop-color="#fff8ee"/>
+      <stop offset="100%" stop-color="#f7e9d6"/>
+    </linearGradient>
+
+    <linearGradient id="crustGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#d09a58"/>
+      <stop offset="50%" stop-color="#c6843d"/>
+      <stop offset="100%" stop-color="#b86f2a"/>
+    </linearGradient>
+
+    <linearGradient id="sauceGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ff9aa2"/>
+      <stop offset="100%" stop-color="#d94757"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000" flood-opacity="0.12"/>
+    </filter>
+
+    <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur"/>
+      <feOffset dx="0" dy="4" result="offsetBlur"/>
+      <feComposite in="offsetBlur" in2="SourceAlpha" operator="out" result="inner"/>
+      <feColorMatrix in="inner" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.22 0"/>
+      <feBlend in="SourceGraphic" mode="normal"/>
+    </filter>
+
+    <pattern id="crumbs" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="6" height="6" fill="rgba(0,0,0,0)"/>
+      <circle cx="2" cy="4" r="0.6" fill="rgba(0,0,0,0.06)"/>
+      <circle cx="4" cy="1.5" r="0.5" fill="rgba(255,255,255,0.06)"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)"/>
+
+  <!-- Plate -->
+  <ellipse cx="400" cy="420" rx="260" ry="80" fill="#fff" filter="url(#softShadow)" />
+  <ellipse cx="400" cy="420" rx="240" ry="60" fill="#fff" opacity="0.7" />
+
+  <!-- Slice group -->
+  <g transform="translate(220,110)" filter="url(#innerShadow)">
+
+    <!-- Crust front (triangle bottom layer) -->
+    <path d="M0,320 L360,120 L360,150 L0,350 Z" fill="url(#crustGrad)" />
+
+    <!-- Crust texture overlay -->
+    <path d="M0,320 L360,120 L360,150 L0,350 Z" fill="url(#crumbs)" opacity="0.35" />
+
+    <!-- Creamy filling -->
+    <path d="M20,30 L340,150 L280,300 L40,260 Z" fill="url(#fillGrad)" stroke="#f1e1c8" stroke-width="1.5" />
+
+    <!-- Light highlight on filling -->
+    <path d="M40,40 L300,150 L260,280 L60,250 Z" fill="rgba(255,255,255,0.28)" opacity="0.7"/>
+
+    <!-- Thin sour-cream top rim -->
+    <path d="M40,36 C120,10 240,10 300,36 L260,70 C220,50 120,50 80,70 Z" fill="#fffdf9" opacity="0.95"/>
+
+    <!-- Caramel drizzle -->
+    <path d="M60,80 C120,58 180,90 240,78 C290,69 320,90 300,110" fill="none" stroke="#b06a2a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
+
+    <!-- Raspberry topping blobs -->
+    <g transform="translate(80,40)">
+      <ellipse cx="40" cy="40" rx="22" ry="16" fill="url(#sauceGrad)" stroke="#a2353f" stroke-width="1"/>
+      <ellipse cx="88" cy="30" rx="20" ry="14" fill="url(#sauceGrad)" stroke="#a2353f" stroke-width="1"/>
+      <ellipse cx="135" cy="48" rx="18" ry="12" fill="url(#sauceGrad)" stroke="#a2353f" stroke-width="1"/>
+      <!-- seeds -->
+      <circle cx="34" cy="36" r="1.2" fill="#ffd7db"/>
+      <circle cx="92" cy="28" r="1.2" fill="#ffd7db"/>
+      <circle cx="129" cy="44" r="1.2" fill="#ffd7db"/>
+    </g>
+
+    <!-- Cream edges shading -->
+    <path d="M40,36 L300,150 L260,280 L60,250 Z" fill="none" stroke="rgba(0,0,0,0.06)" stroke-width="6" opacity="0.25" />
+
+    <!-- Crust underside -->
+    <path d="M0,320 L40,260 L280,300 L360,150 L360,190 L0,350 Z" fill="#9b6a3a" opacity="0.9" />
+
+    <!-- Small shadow on plate -->
+    <ellipse cx="180" cy="280" rx="160" ry="36" fill="rgba(0,0,0,0.08)" transform="translate(120,130) rotate(14)"/>
+  </g>
+
+  <!-- Small glossy highlight on plate -->
+  <path d="M520,380 C540,340 600,340 640,370" stroke="#fff" stroke-width="8" opacity="0.06" stroke-linecap="round"/>
+
+</svg>
