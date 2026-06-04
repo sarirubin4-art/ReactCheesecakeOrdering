@@ -15,7 +15,7 @@ const App = () => {
                 <Route path='/orderForm' element={<OrderForm />} />
                 <Route path='/success' element={<Success />} />
                 <Route path='/viewOrders' element={<ViewOrders />} />
-                <Route path='/viewOrder' element={<ViewOrder/> }/>
+                <Route path='/vieworder/:id' element={<ViewOrder/> }/>
             </Routes>
         </Layout>
     );

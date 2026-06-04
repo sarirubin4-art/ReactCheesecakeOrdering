@@ -29,7 +29,7 @@ const ViewOrders = () => {
                 {orders.map((o,idx)=> {
                     return <tr key={idx }>
                         <td>
-                            <Link to={`/vieworder?id=${o.id}`}>
+                            <Link to={`/vieworder/${o.id}`}>
                                 {o.customerName} - {o.email}
                             </Link>
                         </td>

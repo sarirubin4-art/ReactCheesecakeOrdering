@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,8 @@ namespace ReactCheesecakeOrdering.Data
         public string Toppings { get; set; }
         public int Quantity { get; set; }
         public DateTime DeliveryDate { get; set; }
-        public  string?  SpecialRequests { get; set; }
+        [AllowNull]
+        public string SpecialRequests { get; set; }
     }
 
 }
