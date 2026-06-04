@@ -9,14 +9,9 @@ const OrderForm = () => {
     'Vanilla Bean',
     'Belgian Chocolate',
     'Lemon Zest',
-    'Pumpkin Spice',
     'Espresso Bean',
-    'Matcha Green Tea',
-    'Toasted Almond',
-    'Ricotta & Honey',
     'Salted Caramel Swirl',
     'Mixed Berry Swirl',
-    'Sour Cream'
   ];
 
   const toppingOptions = [
@@ -90,7 +85,7 @@ const OrderForm = () => {
           return;
       }
     await axios.post('/api/home/placeorder', correctFormat);
-      navigate(`/success?order=${{ order: completedOrder }}`);
+      navigate(`/success?order=${ completedOrder }`);
   }
 
   // warm-brown used inline for accents (keeps everything Bootstrap-first)
@@ -222,11 +217,11 @@ const OrderForm = () => {
           </h3>
 
           <img
-            src="https://images.unsplash.com/photo-1615996001375-c76ee27c5c1a?w=500&q=80"
+                      src="https://react-cheesecake-ordering.lit-projects.com/cheesecake.jpg"
             alt="Cheesecake slice preview"
             className="img-fluid rounded-3 mb-3 shadow-sm"
           />
-
+          <div></div>
           <div className="text-center small text-dark w-100 px-2">
             {order.base && (
               <div className="mb-2">

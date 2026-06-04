@@ -13,7 +13,7 @@ namespace ReactCheesecakeOrdering.Data
         public string CustomerName { get; set; }
         public string Email { get; set; }
         public string BaseFlavor { get; set; }
-        public List<string> Toppings { get; set; }
+        public string Toppings { get; set; }
         public int Quantity { get; set; }
         public DateTime DeliveryDate { get; set; }
         public  string?  SpecialRequests { get; set; }

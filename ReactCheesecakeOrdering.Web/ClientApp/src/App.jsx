@@ -6,6 +6,7 @@ import Success from './Pages/Success';
 import OrderForm from './Pages/OrderForm';
 import ViewOrders from './Pages/ViewOrders'
 import dayjs from 'dayjs'
+import ViewOrder from './Pages/ViewOrder';
 const App = () => {
     return (
         <Layout>
@@ -13,7 +14,8 @@ const App = () => {
                 <Route path='/' element={<Home />} />
                 <Route path='/orderForm' element={<OrderForm />} />
                 <Route path='/success' element={<Success />} />
-                <Route path='/viewOrders' element={<ViewOrders />}/>
+                <Route path='/viewOrders' element={<ViewOrders />} />
+                <Route path='/viewOrder' element={<ViewOrder/> }/>
             </Routes>
         </Layout>
     );

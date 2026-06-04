@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import dayjs from 'dayjs';
 
-const Success = (order) => {
+const Success = () => {
     const navigate = useNavigate();
+
+    const OnViewAllClick = () => {
+        navigate('/vieworders');
+    }
+
+
+
     return (
-        <div class="card" style="width: 100rem;">
-                <div class="card-body">
-                    <h3 class="card-title">Your order has been placed</h3>
-                    <h4>{order.quantity} {order.base} Cheesecake{order.quantity > 1 ? "s" : ''} topped with {order.toppings} coming right up!!</h4>
-                    <h4>Your order will be delivered on {dayjs(order.deliveryDate).format("mm/dd/yyyy")}.</h4>
-                    <button className="btn btn-light" onClick={navigate("/viewOrders")}>View All Orders</button>
-                </div>
+        <div className="card" style={{ width: '100 rem' }} >
+            <div className="card-body">
+                <h3 className="card-title">Thank you for choosing Dairy Redefined!</h3>
+                <h4>Your order has been placed successfully</h4>
+                <h5>You will receive a confirmation email shortly.</h5>
+                <button className="btn btn-light" onClick={OnViewAllClick}>View All Orders</button>
+            </div>
         </div>
     );
 }
